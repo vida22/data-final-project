@@ -37,6 +37,7 @@ $(document).ready(function () {
     }
 
     $('#hamburger').click(function () {
+        console.log('cliccc');
         openNav();
     });
     $('.closebtn').click(function () {
@@ -118,17 +119,6 @@ var makeHeatData = function () {
                 mymap = L.map('mapid', {layers: [baseLayer, heatmapLayer]}).setView([36.177, -115.170], 13);
 
                 initiatePoint();
-
-//                var popup = L.popup();
-//
-//                function onMapClick(e) {
-//                    popup
-//                        .setLatLng(e.latlng)
-//                        .setContent("You clicked the map at " + e.latlng.toString())
-//                        .openOn(mymap);
-//                }
-//
-//                mymap.on('click', onMapClick);
             }
         });
     }
@@ -181,7 +171,7 @@ var showgraph = function (classes) {
 
             graph_div.innerHTML = "<p id=" + business_id + "><b>"+business_name+ "</b></p><p><b>Open Hours: </b>"+hours_of_today+"</p><p><b>Score: </b>"+ weighted_rating + ' out of 100</p>';
             //display(business_id)
-            $.get('checkin_time/?business_id='+business_id+'&weekday=true',function(data){
+            $.get('/checkin_time/?business_id='+business_id+'&weekday=true',function(data){
               //console.log(data)
               var chart = new Chartist.Bar('.bar-chart', {
               labels: ['0am', '', '', '3', '', '', '6', '', '', '9', '', '', '12pm', '', '', '3', '', '', '6', '', '', '9', '', '','12'],
@@ -233,14 +223,14 @@ var addPoint = function (my_map, list, category) {
         var color;
 
         switch (category) {
-             case 'Bars':
-                color = '#F75C60';
+            case 'Bars':
+                color = '#4862FF';
                 break;
             case 'Lounges':
-                color = '#F75C60';
+                color = '#4862FF';
                 break;
             case 'Pubs':
-                color = '#F75C60';
+                color = '#4862FF';
                 break;
             case 'Dance Clubs':
                 color = '#50E3C2';
@@ -263,7 +253,7 @@ var addPoint = function (my_map, list, category) {
             fillColor: color,
             fillOpacity: 0.5,
             className: category +" "+business_id+" "+business_name+" "+hours_of_today+" "+weighted_rating,
-        }).addTo(my_map)
+        }).addTo(my_map).bindPopup("<p style=color:" + color + ">" + business_name + "</p>");
         
         $('.' + business_id).click(function(){
           showgraph(this.classList);

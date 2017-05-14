@@ -58,6 +58,10 @@ h3 {
   background: #F75C60;
 }
 
+.blue {
+  background: #4862FF;
+}
+
 .green {
   background: #50E3C2;
 }
@@ -175,20 +179,7 @@ h2 {
   padding-left: 10px;
 }
 
-/*graphs*/
-#graph1 {
-  width: 354px;
-  height: 150px;
-  background: blue;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
 
-#graph2 {
-  width: 354px;
-  height: 150px;
-  background: blue;
-}
 
 /*modal*/
 /*

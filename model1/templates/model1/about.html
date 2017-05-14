@@ -5,4 +5,46 @@
 
 
     <p>Hello, I am the page for personal profile!!!</p>
+
+
+
+
+<!--Sidenav-->
+<script>
+    //get current page name
+    var cur_page = $('.page-name').attr('id');
+
+    /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "305px";
+        $('#' + cur_page).addClass('red-text');
+    }
+
+    /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0px";
+        document.getElementById("main").style.marginLeft = "55px";
+    }
+
+    $('#hamburger').click(function () {
+        console.log('cliccc');
+        openNav();
+    });
+    $('.closebtn').click(function () {
+        closeNav();
+    });
+
+
+    //side nav highlight 
+    $('#mySidenav').on('click', '*', function () {
+        $('#mySidenav>a.red-text').removeClass('red-text');
+        if ($(this).hasClass('closebtn')) {
+        } else {
+            $(this).addClass('red-text');
+            var cur_page = $(this).text();
+        }
+    });
+
+</script>
 {% endblock %}
