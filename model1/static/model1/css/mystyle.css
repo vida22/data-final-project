@@ -1,0 +1,339 @@
+body {
+  font-family: 'Oxygen', sans-serif;
+  background-color: #03001A;
+  letter-spacing: 1px;
+  color: #735CF7;
+  background-image: url("../assets/things.png");
+  background-size: 800px 112px;
+  background-repeat: repeat-y repeat-x;
+}
+
+.page-name {
+  display: none;
+}
+
+/*remove blue highlight*/
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+}
+
+.btn:focus {
+    color: #735CF7;
+}
+
+.container {
+  margin: 0px 55px;
+}
+
+/*Nav*/
+
+h3 {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 700;
+  color: #F75C60;
+  letter-spacing: 1.36px;
+  font-size: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px #F75C60 solid;
+  padding-top: 10px;
+  display: inline;
+}
+
+
+.red {
+  background: #F75C60;
+}
+
+.green {
+  background: #50E3C2;
+}
+
+.pink {
+  background: #E350E1;
+}
+
+
+p {
+  font-size: 12px;
+  margin: 0;
+  line-height: 18px;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+}
+
+#title-border {
+  border-bottom: 1.5px #F75C60 solid;
+  left: 40%;
+  right: 40%;
+  position: absolute;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.nav-btn {
+  background: #0F0C25;
+  color: #735CF7;
+  font-weight: 600;
+  margin-top: 15px;
+  border: #2F2669;
+}
+
+.nav-btn:hover {
+  color: #9EADDA;
+  background: #23195E;
+}
+
+#nav {
+  padding-top: 10px;
+}
+
+
+/*Controls*/
+
+.btn-menu {
+  background: #04001A;
+  color: #735CF7;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.btn-menu:hover {
+  background: #23195E;
+  color: #735CF7;
+}
+
+.btn {
+  padding: 6px 10px;
+}
+
+.btn-group {
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.btn.btn-menu {
+  border: #2F2669 solid 1px; 
+}
+
+.btn.btn-menu.active {
+  background: #735CF7;
+  color: #04001A;
+  border: #735cf7 1px solid;
+}
+
+.block {
+  margin-top: 30px;
+  background: #0F0C25;
+  padding: 20px 18px 20px 18px;
+  border-radius: 4px;
+}
+
+.no-side-pad {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100px;
+/*  display: inline-block;*/
+}
+
+.form-control {
+  background: #735CF7;
+  color: #04001A;
+  border: none;
+  font-weight: 400;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+/*graphs*/
+#graph1 {
+  width: 354px;
+  height: 150px;
+  background: blue;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#graph2 {
+  width: 354px;
+  height: 150px;
+  background: blue;
+}
+
+/*modal*/
+/*
+.modal-content {
+  background: #0F0C25;
+}
+*/
+
+#text-input {
+  background: #fff;
+/*  color: #735cf7;*/
+}
+
+
+/*sidenav*/
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #0F0C25; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+#chill {
+  width: 168px;
+  height: 113.4px;
+  margin-left: 20px;
+  position: relative;
+  top: 250px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #2F2669;
+    display: block;
+    transition: 0.3s;
+    font-family: 'Merriweather';
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #735CF7;
+}
+
+.sidenav a.red-text {
+  color: #F75C60;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 60px;}
+    .sidenav a {font-size: 15px;}
+}
+
+.slider.slider-horizontal {
+    width: 300px;
+    margin-bottom: 20px;
+    margin-top: 7px;
+}
+
+#ex1Slider .slider-selection {
+	background: transparent;
+}
+
+.slider-handle {
+  background: #735CF7;
+}
+
+.slider-track {
+  background: #372879;
+  background-image: none;
+}
+
+.tooltip-main {
+  display: none;
+}
+
+#map {
+  padding: 30px 35px;
+}
+
+/*shapes*/
+.circle {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0px 10px 6px 2px;
+}
+
+.myCSSClass .leaflet-popup-content-wrapper {		
+  width: 400px;		
+  height: 300px;		
+}		
+.myCSSClass .p {		
+  font-family: 'Oxygen', sans-serif;		
+  margin: 0;		
+  font-size: 12px;		
+  line-height: 18px;		
+  font-weight: 300;		
+  letter-spacing: 1.2px;		
+}		
+#showgraph {		
+  width: 300px;		
+  height: 200px;		
+  position: fixed;		
+  right: 65px;		
+  bottom: 20px;		
+  z-index: 500;		
+  background: #0F0C25;		
+  padding: 10px;		
+  border-radius: 3px;		
+/*  opacity: 0;*/		
+}		
+.ct-chart-bar {		
+  height: 80%;		
+}		
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {		
+  stroke: #725BF5;		
+  stroke-width: 2px;		
+}		
+.ct-label {		
+  color: #725BF5;		
+}
+
+

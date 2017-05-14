@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vegas!</title>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css"/>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.min.css"/>
+
+    <!--Chart-->
+    <link rel="stylesheet" href="{% static 'model1/css/chartist.min.css' %}">
+    <script type="text/javascript" src="{% static 'model1/js/chartist.min.js' %}"></script>
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,500i,600i,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700" rel="stylesheet">
+
+    <link rel='shortcut icon' href='{% static 'model1/assets/favicon.ico' %}' type='image/x-icon'>
+
+    {% block extracss %}{% endblock %}
+
+
+    <link rel="stylesheet" href="{% static 'model1/css/mystyle.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container" id='main'>
+    <!--nav-->
+    <div class="row" id='nav'>
+        <div class='col-md-2 no-side-pad'>
+            <button class='left btn nav-btn' id="hamburger">
+                <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class='col-md-8' style="padding-top: 12px">
+            <center><h3>Vegas!</h3></center>
+        </div>
+        <div class='col-md-2 no-side-pad'>
+            <button class='right btn nav-btn' data-toggle="modal" data-target="#loginModal">Log In</button>
+        </div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn">&times;</a>
+        <a href="/" id='mainPage'>Home</a>
+        <a href="../personalProfile.html" id='personalProfile' data-toggle="modal" data-target="#loginModal">Recommendations</a>
+        <a href="/about" id='about'>About</a>
+        <a href="/data" id='data'>Data</a>
+        <a href="/process" id='process'>Process</a>
+
+        <img src="{% static 'model1/assets/chill.png' %}" alt="Chilling" id='chill'>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method='post' action='/login/'>
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <span><label>Username</label></span>
+                        <input type="text" class="form-control" id='text-input' placeholder="Enter Username"
+                               aria-describedby="basic-addon2" name="username">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary original" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary original">Log In</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+</div>
+
+
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+        integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+        crossorigin="">
+</script>
+
+<script src="{% static 'model1/js/jquery.csv.js' %}"></script>
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.min.js"></script>
+
+{% block extraJS %}{% endblock %}
+<script type="text/javascript" src="{% static 'model1/js/myscript.js' %}"></script>
+
+
+</body>
+</html>
