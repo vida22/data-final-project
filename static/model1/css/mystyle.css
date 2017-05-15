@@ -116,6 +116,10 @@ h2 {
   margin: 0;
 }
 
+h2.green-text {
+  color: #2EC5A4;
+}
+
 .carousel-caption h2 {
   margin-bottom: 10px;
   opacity: .9;!important
@@ -415,4 +419,7 @@ h2 {
   font-weight: 300;
 }
 
-
+.block.leftside {
+  padding-right: 40%;
+  min-height: 83vh;
+}

@@ -4,9 +4,49 @@
     <div class="page-name" id="data"></div>
 
 
-    <p>Hello, I am the page for personal profile!!!</p>
-<!--<script type="text/javascript" src="{% static 'model1/js/myscript.js' %}"></script>-->
+    <div class='block leftside'>
+      <br>
+      <h1>Overview</h1>
+      <br><br>
+      <p>Our team chose dataset from Yelp Dateset Challenge to study the ratings and customer volume for Las Vegas attractions. There are total of 6 tables in these dataset. Our team mainly focused on business, check-ins and user tables. 
+</p>
+      <p>The goal for this project is to help tourists decide where and when to go to have fun in Las Vegas by answering following questions:<br>
+Which neighborhood has higher/lower rating bars?<br>
+Which neighborhood has relatively high/low customer volume?</p>
+      
+      
+      <br><br>
+      <h2 class='green-text'>Data Completeness</h2>
+      <br>
+      <p> Our business table comprised of 22,892 businesses in Las Vegas and 16 variables, which had less than 1% mismatched and 4% missing values.
+</p>
+        <br>
+        <img style='height: 100px; display:inline-block; margin-top:10px;margin-left:8px; margin-bottom:10px' src="{% static 'model1/assets/completeness.png' %}" >
+      
+      
 
+    <br><br>
+          <h2 class='green-text'>Data Coherence</h2>
+          <br>
+          <p> The graph indicates a strong correlation between checkin count and time for different types of businesses.
+    </p>
+            <br>
+            <img style='height: 400px; display:inline-block; margin-top:10px;margin-left:8px; margin-bottom:10px' src="{% static 'model1/assets/coherence.png' %}" >
+    <br><br>
+          <h2 class='green-text'>Data Correctness</h2>
+          <br>
+          <p> The data was taken from Yelp Data Challenge and was released by Yelp. We believe the data to be correct since the data comprised of various ratings, and are distributed normally.  
+    </p>
+            <br>
+            <img style='height: 400px; display:inline-block; margin-top:10px;margin-left:8px; margin-bottom:10px' src="{% static 'model1/assets/correct.png' %}" >
+
+  <br><br>
+          <h2 class='green-text'>Accountability</h2>
+          <br>
+          <p> Since the data has been scraped from Yelp, the data set satisfies the Accountability factor.
+  
+    </p>
+    </div>
 
 
 <!--Sidenav-->
