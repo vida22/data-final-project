@@ -30,7 +30,7 @@ def search(request):
 	time = request.GET['time']
 	category = request.GET['category']
 
-	file_path = "data/" + weekday + "_" + time + "_" + category + "_with_locations.csv"
+	file_path = "/home/ubuntu/data-final-project/data/" + weekday + "_" + time + "_" + category + "_with_locations.csv"
 
 	with open (file_path, 'r') as f:
 		reader = csv.reader (f)
