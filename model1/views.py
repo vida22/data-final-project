@@ -10,7 +10,7 @@ import json
 
 # Create your views here.
 def index(request):
-	with open ('data/Monday_0_Bars_with_locations.csv', 'r') as f:
+	with open ('/home/ubuntu/data-final-project/data/Monday_0_Bars_with_locations.csv', 'r') as f:
 		reader = csv.reader (f)
 		my_list = list (reader)
 
@@ -51,8 +51,8 @@ def _preload_data():
 	weekend_checkin_data = {}
 	weekday_checkin_data = {}
 
-	weekday_file_path = 'data/weekday_checkin.csv'
-	weekend_file_path = 'data/weekday_checkin.csv'
+	weekday_file_path = '/home/ubuntu/data-final-project/data/weekday_checkin.csv'
+	weekend_file_path = '/home/ubuntu/data-final-project/data/weekday_checkin.csv'
 
 	with open (weekday_file_path, 'r') as f:
 		reader = csv.reader (f)
@@ -95,9 +95,9 @@ def heatmap_time(request):
 	category = request.GET['category']
 
 	if is_weekend:
-		file_path = "data/weekend_checkin_" + category + ".csv"
+		file_path = "/home/ubuntu/data-final-project/data/weekday_checkin_" + category + ".csv"
 	else:
-		file_path = "data/weekday_checkin_" + category + ".csv"
+		file_path = "/home/ubuntu/data-final-project/data/weekday_checkin_" + category + ".csv"
 
 	print (file_path)
 
@@ -165,3 +165,4 @@ def data(request):
 
 def process(request):
 	return render (request, 'model1/process.html')
+
