@@ -28,57 +28,8 @@
     <!--controls-->
     <div class="row">
         <div class='col-md-4 no-side-pad'>
-            <div class='block'>
-                <h2>Filters</h2>
-                <br>
-
-                <!--day of the week-->
-                <div class="form-group">
-                    <select class="form-control" id="sel1" onchange="switchTime()">
-                        <option>Monday</option>
-                        <option>Tuesday</option>
-                        <option>Wednesday</option>
-                        <option>Thursday</option>
-                        <option>Friday</option>
-                        <option>Saturday</option>
-                        <option>Sunday</option>
-                    </select>
-                </div>
-
-                <!--time slider-->
-                <p id='time'><b>Time:</b> 0:00-1:00</p>
-                <input id="time-slider" name="Time" data-slider-id='ex1Slider' type="text" data-slider-min="0"
-                       data-slider-max="23" data-slider-step="1" data-slider-value="0" onchange="switchTime()"/>
-
-                <!--partying-->
-                <br>
-                <div class='circle blue'></div>
-                <div class="btn-group" role="group" aria-label="..." style="margin-right:7px;">
-                    <button id='bars' type="button" class="btn btn-menu active">Bars</button>
-                    <button id='lounges' type="button" class="btn btn-menu">Lounges</button>
-                    <button id='pubs' type="button" class="btn btn-menu">Pubs</button>
-                </div>
-                <br>
-
-                <div class='circle green'></div>
-                <div class="btn-group" role="group" aria-label="...">
-                    <button id='dance' type="button" class="btn btn-menu active">Dance Clubs</button>
-                    <button id='pool' type="button" class="btn btn-menu">Pool Parties</button>
-                </div>
-                <br>
-
-                <!--chilling-->
-                <div class='circle pink'></div>
-                <div class="btn-group" role="group" aria-label="...">
-                    <button id='casinos' type="button" class="btn btn-menu active">Casino</button>
-                    <button id='shows' type="button" class="btn btn-menu">Shows</button>
-                    <button id='churces' type="button" class="btn btn-menu">Churches</button>
-                </div>
-
-            </div>
-
-            <div class='block' style="height:200px">
-                <p><b>Recommendation</b></p><br>
+            <div class='block' style="height:250px;background: #735CF7" id='recs'>
+                <h2 style="color: white"><b>Recommendations</b></h2><br>
                 <!--Carousel-->
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
@@ -103,7 +54,7 @@
                         </div>
 
                         <div class="item">
-                            <img src="{% static 'model1/assets/recom_back.png' %}" alt="Chicago">
+                            <img src="{% static 'model1/assets/recom_back.png' %}">
                             <div class="carousel-caption">
                                 <h2>{{ rec2.name }}</h2>
                                 <p>Type: {{ rec2_cate }}<br>
@@ -156,6 +107,57 @@
                     </a>
                 </div>
             </div>
+          
+          
+            <div class='block'>
+                <h2>Filters</h2>
+                <br>
+
+                <!--day of the week-->
+                <div class="form-group">
+                    <select class="form-control" id="sel1" onchange="switchTime()">
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                        <option>Saturday</option>
+                        <option>Sunday</option>
+                    </select>
+                </div>
+
+                <!--time slider-->
+                <p id='time'><b>Time:</b> 0:00-1:00</p>
+                <input id="time-slider" name="Time" data-slider-id='ex1Slider' type="text" data-slider-min="0"
+                       data-slider-max="23" data-slider-step="1" data-slider-value="0" onchange="switchTime()"/>
+
+                <!--partying-->
+                <br>
+                <div class='circle blue'></div>
+                <div class="btn-group" role="group" aria-label="..." style="margin-right:7px;">
+                    <button id='bars' type="button" class="btn btn-menu active">Bars</button>
+                    <button id='lounges' type="button" class="btn btn-menu">Lounges</button>
+                    <button id='pubs' type="button" class="btn btn-menu">Pubs</button>
+                </div>
+                <br>
+
+                <div class='circle green'></div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button id='dance' type="button" class="btn btn-menu active">Dance Clubs</button>
+                    <button id='pool' type="button" class="btn btn-menu">Pool Parties</button>
+                </div>
+                <br>
+
+                <!--chilling-->
+                <div class='circle pink'></div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button id='casinos' type="button" class="btn btn-menu active">Casino</button>
+                    <button id='shows' type="button" class="btn btn-menu">Shows</button>
+                    <button id='churces' type="button" class="btn btn-menu">Churches</button>
+                </div>
+
+            </div>
+
         </div>
 
         <!--MAP-->
@@ -167,7 +169,7 @@
             </div>
         </div>
 
-       <div class = 'bar-chart' id='showgraph'></div>
+       <div class = 'bar-chart hidden invis' id='showgraph' style="display: none"></div>
 
 
 
@@ -177,9 +179,22 @@
 
 
 {% block extraJS %}
+    <script>
+      //Set whether have Recommendations
+      var pathname = window.location.pathname; 
+      var lastSix = pathname.substr(pathname.length - 6);
+      console.log(lastSix)
+      if (lastSix != 'login/'){
+        $('#recs').hide();
+      } else {
+        $('#getrec').hide();
+        $('.page-name').attr('id','personalProfile')
+      }
+    </script>
     <script src="{% static 'model1/js/heatmap.js' %}"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="{% static 'model1/js/leaflet-heatmap.js' %}"></script>
+
 
 
 {% endblock %}

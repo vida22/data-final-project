@@ -6,6 +6,9 @@ var heatmapLayer;
 var baseLayer;
 
 $(document).ready(function () {
+    
+
+  
     time_slider = $('#time-slider').slider({
         formatter: function (value) {
             return value + ":00-" + (value + 1) + ":00";
@@ -22,6 +25,8 @@ $(document).ready(function () {
 //Sidenav
     //get current page name
     var cur_page = $('.page-name').attr('id');
+
+
 
     /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
     function openNav() {
@@ -70,6 +75,7 @@ $(document).ready(function () {
 
 
     })
+  
 
 });
 
@@ -169,7 +175,8 @@ var showgraph = function (classes) {
 
             var graph_div = document.getElementById('showgraph');
 
-            graph_div.innerHTML = "<p id=" + business_id + "><b>"+business_name+ "</b></p><p><b>Open Hours: </b>"+hours_of_today+"</p><p><b>Score: </b>"+ weighted_rating + ' out of 100</p>';
+
+            graph_div.innerHTML = "<span id='closediv' class='glyphicon glyphicon-remove' aria-hidden='true'></span><h2 id=" + business_id + ">"+business_name+ "</h2><br><p><b>Open Hours: </b>"+hours_of_today+"</p><p><b>Score: </b>"+ weighted_rating + ' out of 100</p><br><p>Number of Check-In\'s on Yelp</p>';
             //display(business_id)
             $.get('/checkin_time/?business_id='+business_id+'&weekday=true',function(data){
               //console.log(data)
@@ -178,7 +185,7 @@ var showgraph = function (classes) {
               series: [data]
               }, {
               fullWidth: false,
-              height: '75%',
+              height: '150px',
               chartPadding: {
                 right: 10,
                 top: 20
@@ -207,6 +214,13 @@ var showgraph = function (classes) {
             //this only fires when done
 
           })//end AJAX called
+  
+            $('#closediv').click(function(){
+               $('#showgraph').addClass('hidden');
+              $('#showgraph').hide();
+             
+    })
+          
 }
 
 
@@ -221,6 +235,7 @@ var addPoint = function (my_map, list, category) {
         var longitude = parseFloat(list[i][4]);
         var latitude = parseFloat(list[i][5]);
         var color;
+        var opacity = weighted_rating/100*1.2;
 
         switch (category) {
             case 'Bars':
@@ -248,15 +263,21 @@ var addPoint = function (my_map, list, category) {
                 color = '#E350E1';
         }
 
-        L.circle([latitude, longitude], 200, {
+        var mycircle = L.circle([latitude, longitude], 100, {
             stroke: false,
             fillColor: color,
-            fillOpacity: 0.5,
+            fillOpacity: opacity,
             className: category +" "+business_id+" "+business_name+" "+hours_of_today+" "+weighted_rating,
-        }).addTo(my_map).bindPopup("<p style=color:" + color + ">" + business_name + "</p>");
+        }).addTo(my_map).bindPopup("<p style='color:#735cf7'>" + business_name + "</p>");
         
         $('.' + business_id).click(function(){
           showgraph(this.classList);
+          
+              if($('#showgraph').hasClass('hidden')){
+                $('#showgraph').removeClass('hidden').show();
+                } else {
+                return;
+              }
         })
       
     }

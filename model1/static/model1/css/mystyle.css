@@ -60,14 +60,17 @@ h3 {
 
 .blue {
   background: #4862FF;
+  opacity: 80%;
 }
 
 .green {
   background: #50E3C2;
+  opacity: 80%;
 }
 
 .pink {
   background: #E350E1;
+  opacity: 80%;
 }
 
 
@@ -116,6 +119,15 @@ h2 {
 
 #nav {
   padding-top: 10px;
+}
+
+/*Recs*/
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+  height: 170px;
+}
+
+.carousel-control.right, .carousel-control.left {
+  background: none;
 }
 
 
@@ -292,32 +304,58 @@ h2 {
   margin: 0px 10px 6px 2px;
 }
 
+/*
 .myCSSClass .leaflet-popup-content-wrapper {		
   width: 400px;		
   height: 300px;		
 }		
+*/
 .myCSSClass .p {		
   font-family: 'Oxygen', sans-serif;		
   margin: 0;		
   font-size: 12px;		
-  line-height: 18px;		
-  font-weight: 300;		
+  line-height: 12px;		
+  font-weight: 700;		
   letter-spacing: 1.2px;		
-}		
+}	
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #0F0C25;
+  border: none;
+}
+
+.leaflet-popup-content {
+  margin: 0px 8px;
+  line-height: 1;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: #6E58EC; 
+  font-weight: 300;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover {
+  color: #6E58EC; 
+}
+
 #showgraph {		
   width: 300px;		
-  height: 200px;		
+  height: 270px;		
   position: fixed;		
   right: 65px;		
   bottom: 20px;		
   z-index: 500;		
   background: #0F0C25;		
   padding: 10px;		
-  border-radius: 3px;		
-/*  opacity: 0;*/		
-}		
+  border-radius: 3px;				
+}	
+
+#closediv {
+  float: right;
+}
+
 .ct-chart-bar {		
-  height: 80%;		
+  height: 75%;		
 }		
 .ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {		
   stroke: #725BF5;		
@@ -325,6 +363,16 @@ h2 {
 }		
 .ct-label {		
   color: #725BF5;		
+}
+
+.hidden {
+/*  display: none;*/
+}
+
+#closediv {
+  z-index: 1000;
+  cursor: pointer;
+  font-weight: 300;
 }
 
 
