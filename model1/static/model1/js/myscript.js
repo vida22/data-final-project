@@ -239,13 +239,13 @@ var addPoint = function (my_map, list, category) {
 
         switch (category) {
             case 'Bars':
-                color = '#4862FF';
+                color = '#2293FF';
                 break;
             case 'Lounges':
-                color = '#4862FF';
+                color = '#2293FF';
                 break;
             case 'Pubs':
-                color = '#4862FF';
+                color = '#2293FF';
                 break;
             case 'Dance Clubs':
                 color = '#50E3C2';
@@ -254,13 +254,13 @@ var addPoint = function (my_map, list, category) {
                 color = '#50E3C2';
                 break;
             case 'Casino':
-                color = '#E350E1';
+                color = '#FF6CFF';
                 break;
             case 'Shows':
-                color = '#E350E1';
+                color = '#FF6CFF';
                 break;
             case 'Churches':
-                color = '#E350E1';
+                color = '#FF6CFF';
         }
 
         var mycircle = L.circle([latitude, longitude], 100, {
