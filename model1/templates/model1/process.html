@@ -1,35 +1,62 @@
 {% extends 'model1/base.html' %}
-
+<!--{% load static %}-->
 {% block content %}
-    <div class="page-name" id="process"></div>
+    <div class="page-name" id="data"></div>
 
-  <div class='block leftside'>
+
+    <div class='block leftside'>
       <br>
-
+      <h1>Process</h1>  
+      <br><br>
       <h2 class='green-text'>Data Cleaning</h2>
       <br>
-      <p>In this data set, there are 301 types of businesses available in Las Vegas. Our group decided to use a word cloud that allows us to map the most popular businesses.
+      <p> In this data set, there are 301 types of businesses available in Las Vegas. Our group decided to use a word cloud that allows us to map the most popular businesses.
 </p>
-<br><h1>image wordcloud </h1>
+        <br>
+        <img style='height: 100%; display:inline-block; margin-top:10px;margin-left:8px; margin-bottom:10px' src="{% static 'model1/assets/wordcloud.png' %}" >
       <br>
-    <p>In order to help users pick the most popular places to go, our group selected the top 50 business types and conduct user testings to determine top 8. Below graph shows the percentage of all business types for 8 selected by targeted users.</p>
-      <br><h1>image categories </h1>
+        <p>In order to help users pick the most popular places to go, our group selected the top 50 business types and conduct user testings to determine top 8. Below graph shows the percentage of all business types for 8 selected by targeted users.</p>
+                <br>
+        <img style='height: 100%; display:inline-block; margin-top:10px;margin-left:8px; margin-bottom:10px' src="{% static 'model1/assets/categories.png' %}" >
       
-      <br>
-      <h2 class='green-text'>Machine Learning</h2>
-      <br>
-      <p>Our website uses Collaborative Filtering machine learning algorithm to recommend 5 businesses for users. Collaborative filtering(CF) is a typical way of using collective wisdom, is commonly applied in business. The first version of CF is developed by solving the email problem. It is now widely applied on e-commercials so that it can offer users and customers their potential preference. The data is collected from user’s historical behavior, such as the user's purchase history, collection behavior, or published some comments. In CF, the recommendation algorithm is designed to calculate the user and the similarity between items by Euclidean distance or Cosine similarity. In our project, we collect the user’s rating on different bars and clubs. Then we calculate the rating matrix and it’s matrix decomposition and get the rating on the businesses which are not scored. Our recommendation categories include bars, dance clubs, casinos, and pubs. This method helps our user to find their potential favorites from our recommendation system.
+
+    <br><br>
+          <h2 class='green-text'>Machine Learning</h2>
+          <br>
+         <p>Our website uses Collaborative Filtering machine learning algorithm to recommend 5 businesses for users. Collaborative filtering(CF) is a typical way of using collective wisdom, is commonly applied in business. The first version of CF is developed by solving the email problem. It is now widely applied on e-commercials so that it can offer users and customers their potential preference. The data is collected from user’s historical behavior, such as the user's purchase history, collection behavior, or published some comments. In CF, the recommendation algorithm is designed to calculate the user and the similarity between items by Euclidean distance or Cosine similarity. In our project, we collect the user’s rating on different bars and clubs. Then we calculate the rating matrix and it’s matrix decomposition and get the rating on the businesses which are not scored. Our recommendation categories include bars, dance clubs, casinos, and pubs. This method helps our user to find their potential favorites from our recommendation system.
 </p>
-      <br>
-      
-      <h2 class='green-text'>User Testing</h2>
-      <br>
-      <p>Our website uses Collaborative Filtering machine learning algorithm to recommend 5 businesses for users. Collaborative filtering(CF) is a typical way of using collective wisdom, is commonly applied in business. The first version of CF is developed by solving the email problem. It is now widely applied on e-commercials so that it can offer users and customers their potential preference. The data is collected from user’s historical behavior, such as the user's purchase history, collection behavior, or published some comments. In CF, the recommendation algorithm is designed to calculate the user and the similarity between items by Euclidean distance or Cosine similarity. In our project, we collect the user’s rating on different bars and clubs. Then we calculate the rating matrix and it’s matrix decomposition and get the rating on the businesses which are not scored. Our recommendation categories include bars, dance clubs, casinos, and pubs. This method helps our user to find their potential favorites from our recommendation system.
-</p>
-    <br><h1>testing1 </h1>
-      <br><h1>testing2 </h1>
-      <br><h1>testing3 </h1>
+ <br><br>
+          <h2 class='green-text'>User Interview</h2>
+          <br>
+        <p> We started with the question, what information would be helpful for tourists in Las Vegas? We found people who have visited Las Vegas in the past and asked about their experience in deciding where to go in Vegas and what kind of places they went. Below are some findings from user interview:<br> <br></p>
+        <ol>
+        <li>Most people currently use Yelp to find business information in Las Vegas. Other sources of information is family and friends as well as websites such as TripAdvisor which offers mostly qualitative information.<br> </li>    
+
+        <li>Some popular categories of tourist interests in Las Vegas are: bars and pubs, pool parties and clubs, casinos, shows, and churches (just in case you want to get married at 3am).<br></li>
+        <li>Yelp is helpful for looking for specific information about a venue, but it’s not optimized for investigating the overall business quality and customer volume of neighborhoods.<br></li>
+        <li>Almost always, tourists want to visit more than one place during the day. They want to look for the best <i>neighborhoods</i> to go for a general entertainment purpose. For example, a question might be, which neighborhood/street has the best bars? Being able to see that on a map is valuable to people. <br></li>
+        
+        <li>People would like to know when it’s the best time to visit a place and might have criteria for different types of venues, moods, and purpose. For example, one might want to go to crowded bars but someone else might just want a pub with few people in the afternoon. We decided to show a bar chart of number of check-ins throughout the day. User can decide when they want to go to a specific place using this data.<br></li>
+       <li>Some people expressed that want a quick and easy way to get recommendations of where to go. That’s why we included a recommendation feature using machine learning. <br></li></ol>
+
+
+    <br><br>
+          <h2 class='green-text'>User Testing</h2>
+          <br>
+          <p> For the design of the interface, we started with sketches (low-fidelity) to test out ideas and layouts. We tested these prototypes with users to see if the interface is easy to understand. Below are some interface changes we made through user testing:  
+    </p>
+            <br>
+        <ol><li>We decided to put the filters on the left of the screen instead of on the top, in order to maximize the height of the map. We found that users have a hard time in navigating through a wide but short map. 
+</li>
+        <li>We added the indicators directly to the left of the filter selections to reduce user’s mental load: they can easily relate the colors to the dots on the map. </li><li>We initially forgot to include the legends which caused confusion. </li>
+        <li>We hid the navigation to maximize screen space, especially for the map, which is the most valuable section to our users. </li>
+        <li>We experimented a lot with the color scheme of the markers and heatmap on the map. We initially had a different color for each filter option, but the feedback we got from users is that it’s too confusing and messy, when you have 10 different colors on one map. We decided to group the filters and assign one color to each group. The categories in a group are similar enough that users don’t mind not being able to differentiate them. But if they really need to differentiate, say, bars vs. pubs, they can only show one category at a time. It’s a compromise we had to make. We also made sure that the color of the heatmap does not overlap with the markers. 
+</li></ol>
+            <img style='height: 400px; display:inline-block; margin-top:10px;margin-left:8px; margin-bottom:10px' src="{% static 'model1/assets/testing.png' %}" >
+
+  
     </div>
+
 
 <!--Sidenav-->
 <script>
@@ -69,4 +96,6 @@
     });
 
 </script>
+
 {% endblock %}
+

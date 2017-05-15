@@ -81,6 +81,13 @@ h4 {
   opacity: .8;
 }
 
+li {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+}
+
 .red {
   background: #F75C60;
 }

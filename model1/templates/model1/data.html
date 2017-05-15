@@ -6,13 +6,11 @@
 
     <div class='block leftside'>
       <br>
-      <h1>Overview</h1>
+      <h1>Data Overview</h1>
       <br><br>
       <p>Our team chose dataset from Yelp Dateset Challenge to study the ratings and customer volume for Las Vegas attractions. There are total of 6 tables in these dataset. Our team mainly focused on business, check-ins and user tables. 
 </p>
-      <p>The goal for this project is to help tourists decide where and when to go to have fun in Las Vegas by answering following questions:<br>
-Which neighborhood has higher/lower rating bars?<br>
-Which neighborhood has relatively high/low customer volume?</p>
+
       
       
       <br><br>
@@ -28,14 +26,15 @@ Which neighborhood has relatively high/low customer volume?</p>
     <br><br>
           <h2 class='green-text'>Data Coherence</h2>
           <br>
-          <p> The graph indicates a strong correlation between checkin count and time for different types of businesses.
+          <p> The graph below indicates a strong correlation between time of day and the customer volumes for all 8 types of businesses. Not suprisingly we found that the busiest hour in Vegas is between 1-3 am while the down time is around noon time. 
     </p>
             <br>
             <img style='height: 400px; display:inline-block; margin-top:10px;margin-left:8px; margin-bottom:10px' src="{% static 'model1/assets/coherence.png' %}" >
     <br><br>
           <h2 class='green-text'>Data Correctness</h2>
           <br>
-          <p> The data was taken from Yelp Data Challenge and was released by Yelp. We believe the data to be correct since the data comprised of various ratings, and are distributed normally.  
+          <p> The data was taken from Yelp Data Challenge and was released by Yelp. We believe the data to be correct since the data comprised of various ratings, and are distributed normally.  <br>
+There are some bias exists in our customer volume analysis, since the user check-ins from Yelp does not necessarily represents the true customer volume for each business. However, our map visualization allows users to compare estimated customer volume between different neighbourhoods. 
     </p>
             <br>
             <img style='height: 400px; display:inline-block; margin-top:10px;margin-left:8px; margin-bottom:10px' src="{% static 'model1/assets/correct.png' %}" >
