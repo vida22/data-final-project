@@ -44,7 +44,7 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img src="{% static 'model1/assets/recom_back.png' %}" alt="Chania">
+                            <img src="{% static 'model1/assets/recom_back.png' %}">
                             <div class="carousel-caption">
                                 <h2>{{ rec1.name }}</h2>
                                 <p>Type: {{ rec1_cate }}<br>
@@ -155,6 +155,14 @@
                     <button id='shows' type="button" class="btn btn-menu">Shows</button>
                     <button id='churces' type="button" class="btn btn-menu">Churches</button>
                 </div>
+              
+                <br><br>
+              
+                <p style='display:inline-block'><b>Score*</b></p>
+                <img style='height: 25px; display:inline-block; margin-top:10px;margin-left:8px; margin-bottom:10px' src="{% static 'model1/assets/score.png' %}" alt="score legend"><br>
+                <p style='display:inline-block'><b>Customer Volume**</b></p>
+              <img style='height:28px; display:inline-block; margin-left:8px;margin-top:10px' src="{% static 'model1/assets/volume.png' %}" alt="customer volume">
+              <h4>* Score is calculated based on number of reviews and rating on Yelp. ** Customer volume is estimated using check-ins on Yelp.</h4>
 
             </div>
 
